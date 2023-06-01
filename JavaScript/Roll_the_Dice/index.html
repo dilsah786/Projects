@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Throw Dice App</title>
+    <style>
+
+
+#container{
+    width: 30%;
+    display: flex;
+    gap: 20px;
+    margin-left: 40%;
+    margin-top: 10%;
+    border: 2px solid red;
+}
+#winner{
+    text-align: center;
+    font-size: 30px;
+    
+}
+#roll{
+    background-color: aqua;
+    height: 40px;
+    display: flex;
+    margin: 20px auto;
+    padding-top: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+
+
+           #member-a{
+            
+            width: 100px;
+            height: 100px;
+          
+        }
+        #member-b{
+           
+            
+            width: 100px;
+            height: 100px;
+          
+        }
+        #member-c{
+           
+            
+            width: 100px;
+            height: 100px;
+     
+        }
+
+    </style>
+</head>
+<body>
+    <div id="winner"></div>
+    <section id="container">
+       
+        <div class="member" id="member-a"></div>
+        <div class="member" id="member-b"></div>
+        <div class="member" id="member-c"></div>
+       
+
+       <!-- Add code here -->
+    </section>
+    <button id="roll">Roll the Dice</button>
+    <script src="./src/throwDice.js" ></script>
+</body>
+</html>
