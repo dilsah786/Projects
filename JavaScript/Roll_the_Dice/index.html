@@ -7,6 +7,9 @@
     <title>Throw Dice App</title>
     <style>
 
+*{
+                background-color: bisque;
+            }
 
 #container{
     width: 30%;
@@ -28,6 +31,7 @@
     margin: 20px auto;
     padding-top: 10px;
     border: none;
+    text-decoration-color: blueviolet;
     border-radius: 10px;
 }
 
@@ -48,12 +52,48 @@
           
         }
         #member-c{
-           
-            
             width: 100px;
             height: 100px;
      
         }
+       
+        @media (max-width:768px){
+         
+    #container{
+        display: flex;
+        margin: auto;
+        margin-top: 20%;
+        width: 50%;
+ 
+    }
+    #roll{
+    background-color: aqua;
+    height: 60px;
+    display: flex;
+    margin: 30px auto;
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    text-decoration-color: blueviolet;
+    border-radius: 10px;
+}
+    #roll:hover{
+        background-color: rgb(70, 201, 70);
+        color: rgb(214, 33, 96);
+        font-size: large;
+        font-weight: 600;
+    }
+
+     .member{
+        width:fit-content;
+        height: fit-content;
+        padding: 20px;
+    }
+
+
+        }
+
 
     </style>
 </head>
