@@ -1,0 +1,6 @@
+export const ADD_ONE = "ADD_ONE";
+export const SUB_ONE = "SUB_ONE";
+
+export const GET_PRODUCT_PENDING = "GET_PRODUCT_PENDING";
+export const GET_PRODUCT_SUCCESS = "GET_PRODUCT_SUCCESS";
+export const GET_PRODUCT_FAILURE = "GET_PRODUCT_FAILURE";
