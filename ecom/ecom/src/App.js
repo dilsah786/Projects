@@ -1,19 +1,17 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { store } from "./Redux/store";
-import { ADD, ADD_ONE, SUB, SUB_ONE, getAllProducts } from "./Redux/action";
+import { ADD, SUB } from "./Redux/action";
 import { useState } from "react";
-import { useEffect } from "react";
-import Products from "./Pages/Products";
+import { useSelector, useDispatch } from "react-redux";
+import AllRoutes from "./Routes/AllRoutes";
+import Home from "./Pages/Home";
+import { Link } from "react-router-dom";
+
 
 function App() {
   const [render, setRender] = useState(true);
-  const { dispatch, getState, subscribe } = store;
-  const data = getState();
+  const dispatch = useDispatch();
 
-  subscribe(() => {
-    setRender(!render);
-  });
+  const data = useSelector((store) => store.reducer);
 
   const handleCounterAdd = (val) => {
     dispatch(ADD());
@@ -27,19 +25,22 @@ function App() {
     dispatch(SUB());
   };
 
-  console.log(data.counter);
-
   return (
     <div className="App">
+
       <h1>Counter : {data.counter} </h1>
       <button onClick={handleCounterAdd}>Add 1</button>
       <button onClick={handleCounterSub}>Sub 1</button>
       <br />
       <br />
+     <Link to="/createtodo"> <button>Create New Todo</button></Link>
       <br />
       <br />
       <br />
-      <Products />
+      <br />
+      <br />
+      <AllRoutes/>
+      <br />
     </div>
   );
 }

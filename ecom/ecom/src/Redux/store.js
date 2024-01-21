@@ -1,10 +1,8 @@
 import { legacy_createStore } from "redux";
-import { reducer } from "./reducer";
+import { reducer } from "./Reducers/reducer";
+import {combineReducers} from "redux"
+import { todoReducer } from "./Reducers/todoReducer";
 
-const initialState = {
-  products: [],
-  loading:false,
-  counter: 0,
-};
+const rootReducer = combineReducers({todoReducer,reducer})
 
-export const store = legacy_createStore(reducer, initialState);
+export const store = legacy_createStore(rootReducer);
