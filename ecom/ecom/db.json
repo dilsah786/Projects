@@ -1,12 +1,6 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "Expanded disintermediate database",
-      "completed": true,
-      "dueDate": "2020-03-29"
-    },
-    {
       "id": 2,
       "title": "Innovative intangible concept",
       "completed": true,
@@ -479,12 +473,6 @@
       "title": "Diverse web-enabled matrix",
       "completed": true,
       "dueDate": "2023-04-27"
-    },
-    {
-      "id": 81,
-      "title": "Phased zero administration neural-net",
-      "completed": true,
-      "dueDate": "2021-05-04"
     },
     {
       "id": 82,
@@ -5999,6 +5987,24 @@
       "title": "Horizontal impactful alliance",
       "completed": false,
       "dueDate": "2021-05-19"
+    },
+    {
+      "title": "",
+      "completed": false,
+      "dueDate": "",
+      "id": 1001
+    },
+    {
+      "title": "",
+      "completed": false,
+      "dueDate": "",
+      "id": 1002
+    },
+    {
+      "title": "",
+      "completed": false,
+      "dueDate": "",
+      "id": 1003
     }
   ]
 }

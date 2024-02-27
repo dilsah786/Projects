@@ -1,8 +1,37 @@
-.App {
+*{
+  text-align: center;
+  background-color: bisque;
+}
+.App{
   text-align: center;
 }
-table, th, td {
+table{
+  border-collapse: collapse;
+  margin: auto !important;
+}
+table, td, th {
   border: 1px solid black;
-  border-collapse:collapse ;
-  border-radius: 5px;
+}
+.create_input{
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   height: 50px;
+   width: 300px;
+}
+.create_input_date{
+  height: 50px;
+  width: 200px;
+  
+}
+.create_items{
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.create_button{
+  width: 100px;
+  height: 50px;
 }

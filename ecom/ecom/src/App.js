@@ -6,7 +6,6 @@ import AllRoutes from "./Routes/AllRoutes";
 import Home from "./Pages/Home";
 import { Link } from "react-router-dom";
 
-
 function App() {
   const [render, setRender] = useState(true);
   const dispatch = useDispatch();
@@ -27,19 +26,7 @@ function App() {
 
   return (
     <div className="App">
-
-      <h1>Counter : {data.counter} </h1>
-      <button onClick={handleCounterAdd}>Add 1</button>
-      <button onClick={handleCounterSub}>Sub 1</button>
-      <br />
-      <br />
-     <Link to="/createtodo"> <button>Create New Todo</button></Link>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <AllRoutes/>
+      <AllRoutes />
       <br />
     </div>
   );
