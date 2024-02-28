@@ -1,0 +1,18 @@
+.App{
+  text-align: center;
+  font-family: 'Inter, sans-serif';
+}
+*{
+  background-color: #1f1f1f;
+  color: white;
+}
+.image-container:hover .original-image {
+  opacity: 0;
+  transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg);
+  transition-duration: 1s;
+}
+
+.image-container:hover .hover-image {
+  opacity: 1;
+  
+}
