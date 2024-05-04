@@ -5,10 +5,7 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Avatar } from "../assets/index.js";
 import ThemeSwitch from "./ThemeSwitch.jsx";
 
-
-
-const links  = ["Dashboard","Trasactions","Account","Settings"]
-
+const links = ["Dashboard", "Trasactions", "Account", "Settings"];
 
 const Navbar = () => {
   const [selected, setSelected] = useState(0);
@@ -31,11 +28,10 @@ const Navbar = () => {
               key={index}
               className={`${
                 index === selected
-                  ? "bg-black dark:bg-slate-800 text-white "
+                  ? "bg-slate-600 dark:bg-slate-800 text-white font-medium hover:animate-bounce "
                   : " text-gray-700 dark:text-gray-500 "
-              } px-6 py-6 rounded-full`}
-
-              onClick={()=>setSelected(index)}
+              } px-4 py-2  rounded-full`}
+              onClick={() => setSelected(index)}
             >
               <a href="#"> {link} </a>
             </div>
@@ -43,19 +39,25 @@ const Navbar = () => {
         })}
       </div>
 
-     <div className="flex items-center gap-10 " >
-        <ThemeSwitch/>
-        <div className="flex items-center gap-2" >
-            <img src={Avatar} alt="User" className="w-10 md:w-12 h-10 md:h-12 rounded-none-full object-cover cursor-pointer"  />
-          <div className="hidden md:block" >
-            <p className="text-lg font-medium text-black dark:text-gray-400 ">Md Dilnawaz Alam</p>
-            <span className="text-sm text-gray-700 dark:text-gray-500" >mddilnawazalam@gmail.com</span>
+      <div className="flex items-center gap-10 ">
+        <ThemeSwitch />
+        <div className="flex items-center gap-2">
+          <img
+            src={Avatar}
+            alt="User"
+            className="w-10 md:w-12 h-10 md:h-12 rounded-full object-cover cursor-pointer hover:animate-pulse"
+          />
+          <div className="hidden md:block">
+            <p className="text-lg font-semibold text-black dark:text-gray-400 ">
+              Md Dilnawaz Alam
+            </p>
+            <span className="text-sm text-gray-700 font-semibold dark:text-gray-500">
+              mddilnawazalam@gmail.com
+            </span>
             <MdOutlineKeyboardArrowDown className="hidden md:block text-2xl text-gray-600 dark:text-gray-300 cursor-pointer" />
           </div>
-
         </div>
-     </div>
-
+      </div>
     </div>
   );
 };
