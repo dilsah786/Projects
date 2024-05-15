@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 :root{
-  @apply bg-slate-900 text-slate-300
+  @apply bg-[#070d1b] text-slate-300
 }

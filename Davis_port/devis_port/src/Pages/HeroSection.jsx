@@ -2,37 +2,45 @@ import React, { useEffect } from "react";
 import heroSectionImage from "../assets/hero-img.jpg";
 import AOS from "aos";
 import 'aos/dist/aos.css';
+import Button from "../Component/Button";
+import About from "./About";
+import Services from "./Services";
+import Skills from "./Skills";
 
 const HeroSection = () => {
   useEffect(() => {
     AOS.init();
   }, []);
   return (
-    <div className="flex m-auto overflow-x-hidden">
-      <div className="flex justify-between items-center m-auto">
+    <>
+    <div className="flex m-auto lg:mt-36 mt-16  overflow-x-hidden bg-[#070d1b] z-0">
+      <div className=" w-11/12 md:flex  sm:flex lg:flex m-auto gap-20 ">
         <div className="flex justify-center m-auto flex-col gap-2 mt-20 ">
           <h1 className="text-yellow-500 font-thin text-3xl pl-1 tracking-wide">
             Hello, I'm
           </h1>
-          <h1 className="text-white font-extrabold text-8xl lg:text-9xl tracking-wide">
-            Edward Davis
+          <h1 className="text-white font-extrabold text-7xl lg:text-9xl  ">
+            Edward <br/> Davis
           </h1>
-          <p className="text-gray-400 text-4xl mt-8 pl-1 tracking-wide">
+          <p className="text-gray-400 text-3xl lg:text-4xl mt-8 pl-1 tracking-wide">
             Visual Designer
           </p>
-          <button className="text-black bg-yellow-500 p-2 mt-8 w-48 rounded-full ml-1 tracking-wide">
-            Hire Me
-          </button>
+         <Button text={"Hire Me"} />
         </div>
         <div
-          className="hidden lg:flex"
+          className="hidden  lg:flex lg:opacity-40"
           data-aos="fade-left"
           data-aos-duration="1500"
+
         >
-          <img  src={heroSectionImage} width={1000} />
+          <img  src={heroSectionImage} width={800} />
         </div>
       </div>
     </div>
+    <About/>
+    <Services/>
+    <Skills/>
+    </>
   );
 };
 

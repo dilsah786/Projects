@@ -8,6 +8,9 @@ import About from "./Pages/About";
 import HeroSection from "./Pages/HeroSection";
 import AllRoutes from "./Routing/AllRoutes";
 import AOS from "aos";
+import 'aos/dist/aos.css';
+import Services from "./Pages/Services";
+import Skills from "./Pages/Skills";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -18,9 +21,10 @@ function App() {
   return (
     <div>
       <Navbar />
-      <div className="w-4/5 flex flex-col justify-center items-center m-auto">
-        <HeroSection />
+      <div className="flex flex-col justify-center items-center m-auto ">
+       <AllRoutes/>
       </div>
+      
     </div>
   );
 }
