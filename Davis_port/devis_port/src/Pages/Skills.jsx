@@ -12,16 +12,16 @@ const Skills = () => {
         {/*  Skill starts here*/}
         <div className="flex lg:flex-row flex-col justify-center items-center gap-4 lg:gap-6">
           <div className="lg:w-2/4 w-4/5">
-            <h1 className="text-neutral-100 text-3xl font-semibold mb-6">
+            <h1 className="text-neutral-100 lg:text-4xl text-3xl font-semibold mb-8">
               All the skills that I have in that field of work are mentioned.
             </h1>
-            <p className="text-gray-400 text-sm mb-6">
+            <p className="text-gray-400 text-[1rem] mb-8 lg:text-[1.1rem]">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
               erat, sed diam voluptua. At vero eos et accusam et justo duo
               dolores.
             </p>
-            <p className="text-gray-400 text-sm mb-6">
+            <p className="text-gray-400 text-[1rem] mb-6 lg:text-[1.1rem]">
               Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
               dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
               elitr, sed diam nonumy eirmod tempor invidunt.

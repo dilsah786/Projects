@@ -30,8 +30,10 @@ const Navbar = () => {
               {navItems.map((nav, index) => {
                 return (
                   <li className="text-xl cursor-pointer hover:text-yellow-500">
-                    {" "}
-                    {nav.text}{" "}
+                  <a href={nav.href} className="">
+                      {" "}
+                      {nav.text}{" "}
+                    </a>
                   </li>
                 );
               })}

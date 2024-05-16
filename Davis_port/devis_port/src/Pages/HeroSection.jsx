@@ -6,6 +6,7 @@ import Button from "../Component/Button";
 import About from "./About";
 import Services from "./Services";
 import Skills from "./Skills";
+import Resume from "./Resume";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -40,6 +41,7 @@ const HeroSection = () => {
     <About/>
     <Services/>
     <Skills/>
+    <Resume/>
     </>
   );
 };
