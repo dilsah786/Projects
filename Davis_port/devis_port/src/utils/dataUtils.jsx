@@ -23,10 +23,10 @@ import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 export const navItems = [
   { href: "/", text: "Home" },
   { href: "/about", text: "About" },
-  { href: "resume", text: "Resume" },
-  { href: "portfolio", text: "Portfolio" },
-  { href: "blogs", text: "Blog" },
-  { href: "contact", text: "Contact" },
+  { href: "/resume", text: "Resume" },
+  { href: "/portfolio", text: "Portfolio" },
+  { href: "/blogs", text: "Blog" },
+  { href: "/contact", text: "Contact" },
 ];
 
 export const mobileNavItems = [
