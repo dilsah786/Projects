@@ -1,19 +1,11 @@
 import React from "react";
 import Button from "../Component/Button";
-import {
-  Locate,
-  Mail,
-  MapPin,
-  MessageCircle,
-  MessageCircleHeartIcon,
-  Phone,
-} from "lucide-react";
 import { contactItems } from "../utils/dataUtils";
 import Title from "../Component/Title";
 
 const Contacts = () => {
   return (
-    <div className="mt-24 ">
+    <div className="mt-24 pb-6">
     <div>
     <Title text={"Contact me"} />
     </div>
