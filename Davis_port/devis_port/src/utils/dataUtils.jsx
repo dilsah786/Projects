@@ -9,6 +9,17 @@ import appImage from "../assets/mobile.png";
 import productImage from "../assets/product-design.png";
 import Skills from "../Pages/Skills";
 
+import port1 from "../assets/portfolio1_lg.jpg";
+import port2 from "../assets/portfolio2_lg.jpg";
+import port3 from "../assets/portfolio3_lg.jpg";
+import port4 from "../assets/portfolio4_lg.jpg";
+import port5 from "../assets/portfolio5_lg.jpg";
+
+import blog1 from "../assets/blog1.jpg";
+import blog2 from "../assets/blog2.jpg";
+import blog3 from "../assets/blog3.jpg";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+
 export const navItems = [
   { href: "/", text: "Home" },
   { href: "/about", text: "About" },
@@ -27,30 +38,6 @@ export const mobileNavItems = [
   { href: "contact", text: "Contact" },
   { href: "services", text: "Services" },
   { href: "skills", text: "Skills" },
-];
-
-export const reviewItems = [
-  {
-    name: "Richard Miles",
-    position: "Chaiman",
-    img: client1,
-    review:
-      "Adept at coding languages and frameworks, demonstrating proficiency in front-end and back-end development. Capable of crafting dynamic and user-friendly websites with clean, efficient code.",
-  },
-  {
-    name: "Vesta Shufelt",
-    position: "Executive Director",
-    img: client2,
-    review:
-      "Excellent communicator who works seamlessly within teams, understanding client needs and delivering tailored solutions promptly.",
-  },
-  {
-    name: "Joseph Alves",
-    position: "Managing Director",
-    img: client3,
-    review:
-      " Exhibits creativity in troubleshooting and implementing unique features, ensuring optimal functionality and user experience.",
-  },
 ];
 
 export const serviceItems = [
@@ -125,8 +112,6 @@ export const experienceItems = [
   },
 ];
 
-
-
 export const educationItems = [
   {
     title: "Master of Computer Science",
@@ -148,5 +133,81 @@ export const educationItems = [
     place: "XYZ Institution",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nulla, tincidunt id faucibus sed, suscipit feugiat turpis.",
+  },
+];
+
+export const portfolioItems = [
+  { img: port1 },
+  { img: port2 },
+  { img: port3 },
+  { img: port4 },
+  { img: port5 },
+  { img: port1 },
+];
+
+export const reviewItems = [
+  {
+    name: "Richard Miles",
+    position: "Chaiman",
+    img: client1,
+    review:
+      "Adept at coding languages and frameworks, demonstrating proficiency in front-end and back-end development. Capable of crafting dynamic and user-friendly websites with clean, efficient code.",
+  },
+  {
+    name: "Vesta Shufelt",
+    position: "Executive Director",
+    img: client2,
+    review:
+      "Excellent communicator who works seamlessly within teams, understanding client needs and delivering tailored solutions promptly.",
+  },
+  {
+    name: "Joseph Alves",
+    position: "Managing Director",
+    img: client3,
+    review:
+      " Exhibits creativity in troubleshooting and implementing unique features, ensuring optimal functionality and user experience.",
+  },
+];
+
+export const blogsItems = [
+  {
+    img: blog1,
+    author: "Admin",
+    date: "02-09-2023",
+    description:
+      "What are the latest trends in Graphic design according to you?",
+  },
+  {
+    img: blog2,
+    author: "Admin",
+    date: "03-10-2023",
+    description: "What do you think makes someone good designer?",
+  },
+  {
+    img: blog3,
+    author: "Admin",
+    date: "04-11-2023",
+    description: "Were there any mistakes you've made as a designer?",
+  },
+];
+
+export const contactItems = [
+  {
+    icons: <Mail />,
+    title: "Email",
+    desc1: "devis@example.com",
+    desc2: "info@support.com",
+  },
+  {
+    icons: <Phone />,
+    title: "Phone",
+    desc1: "+1 876-369-9009",
+    desc2: "+1 213-519-1786",
+  },
+  {
+    icons: <MapPin />,
+    title: "Address",
+    desc1: "2661 High Meadow Lane Bear Creek,",
+    desc2: "Olancha, KY 93544",
   },
 ];

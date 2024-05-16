@@ -7,6 +7,10 @@ import About from "./About";
 import Services from "./Services";
 import Skills from "./Skills";
 import Resume from "./Resume";
+import Portfolio from "./Portfolio";
+import Reviews from "./Reviews";
+import Blogs from "./Blogs";
+import Contacts from "./Contacts";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -42,6 +46,10 @@ const HeroSection = () => {
     <Services/>
     <Skills/>
     <Resume/>
+    <Portfolio/>
+    <Reviews/>
+    <Blogs/>
+    <Contacts/>
     </>
   );
 };

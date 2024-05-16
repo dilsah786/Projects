@@ -11,6 +11,7 @@ import AOS from "aos";
 import 'aos/dist/aos.css';
 import Services from "./Pages/Services";
 import Skills from "./Pages/Skills";
+import Reserve from "./Component/Reserve";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -24,6 +25,7 @@ function App() {
       <div className="flex flex-col justify-center items-center m-auto ">
        <AllRoutes/>
       </div>
+      <Reserve/>
       
     </div>
   );

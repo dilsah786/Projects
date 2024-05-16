@@ -9,7 +9,7 @@ const Services = () => {
         AOS.init();
       }, []);
   return (
-    <div className="bg-[#0a101e] pb-8 pt-28">
+    <div className="bg-[#0a101e] pb-12 pt-28">
     <Title text={"services"} />
       <div className="grid min-[600px]:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 hover:text-neutral-300 w-4/5 justify-center items-center m-auto">
         {serviceItems?.map((service, index) => {
