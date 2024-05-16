@@ -32,12 +32,12 @@ export const navItems = [
 export const mobileNavItems = [
   { href: "/", text: "Home" },
   { href: "/about", text: "About" },
-  { href: "resume", text: "Resume" },
-  { href: "portfolio", text: "Portfolio" },
-  { href: "blogs", text: "Blog" },
-  { href: "contact", text: "Contact" },
-  { href: "services", text: "Services" },
-  { href: "skills", text: "Skills" },
+  { href: "/resume", text: "Resume" },
+  { href: "/portfolio", text: "Portfolio" },
+  { href: "/blogs", text: "Blog" },
+  { href: "/contact", text: "Contact" },
+  { href: "/services", text: "Services" },
+  { href: "/skills", text: "Skills" },
 ];
 
 export const serviceItems = [
