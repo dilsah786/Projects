@@ -1,12 +1,9 @@
-import { useState } from "react";
+import React,{memo, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { mobileNavItems, navItems } from "../utils/dataUtils";
 import {
   Menu,
-  Phone,
-  PhoneCall,
-  PhoneCallIcon,
   PhoneIcon,
   X,
 } from "lucide-react";
@@ -32,7 +29,7 @@ const Navbar = () => {
             <ul className=" hidden  lg:flex justify-around items-center gap-8">
               {navItems.map((nav, index) => {
                 return (
-                  <Link to={nav.href}>
+                  <Link key={index} to={nav.href} >
                     <li className="text-xl cursor-pointer hover:text-yellow-500">
                       {" "}
                       {nav.text}{" "}
@@ -62,7 +59,7 @@ const Navbar = () => {
             <ul>
               {mobileNavItems.map((nav, index) => {
                 return (
-                  <Link to={nav.href}>
+                  <Link to={nav.href} key={index}>
                   <li key={index} className="py-3 text-[18px] hover:underline">
                     {nav.text} 
                   </li>
@@ -78,4 +75,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

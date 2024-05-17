@@ -19,7 +19,7 @@ const Portfolio = () => {
         <div className="grid lg:grid-cols-3 min-[600px]:grid-cols-2 gap-5 m-5 cursor-pointer">
           {portfolioItems?.map((port, index) => {
             return (
-              <div className=" m-auto hover:border-2 hover:scale-105  bg-slate-700 transition-all hover:duration-200">
+              <div key={index} className=" m-auto hover:border-2 hover:scale-105  bg-slate-700 transition-all hover:duration-200">
                 {" "}
                 <img
                   className="w-full m-auto "
@@ -39,4 +39,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default React.memo(Portfolio);

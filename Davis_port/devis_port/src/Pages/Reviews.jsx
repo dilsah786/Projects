@@ -17,7 +17,7 @@ const Reviews = () => {
         <div className="m-auto grid min-[600px]:grid-cols-2 lg:grid-cols-3  " >
         {reviewItems?.map((rev, index) => {
           return (
-            <div className="flex flex-col justify-center items-center m-4 bg-gray-900 p-4 rounded-lg hover:scale-105 cursor-pointer" data-aos="zoom-in" >
+            <div key={index} className="flex flex-col justify-center items-center m-4 bg-gray-900 p-4 rounded-lg hover:scale-105 cursor-pointer" data-aos="zoom-in" >
               <div className= "text-center rounded-lg" >{rev.review}</div>
               <div className="text-center mt-4 flex flex-col justify-center items-center">
                 <img src={rev.img} />
@@ -33,4 +33,4 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+export default React.memo(Reviews);

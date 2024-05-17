@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Button from "../Component/Button";
 import { contactItems } from "../utils/dataUtils";
 import Title from "../Component/Title";
@@ -49,7 +49,7 @@ const Contacts = () => {
             <div className="flex flex-col gap-4 ">
               {contactItems?.map((cont, index) => {
                 return (
-                  <div className="flex gap-4">
+                  <div key={index} className="flex gap-4">
                     <div>
                       <p className="border border-white w-[60px] h-[60px] rounded-full p-4 hover:border-yellow-400 cursor-pointer ">
                         {cont.icons}
@@ -73,4 +73,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default React.memo(Contacts);

@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Blogs = () => {
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -18,7 +19,7 @@ const Blogs = () => {
       <div className="w-4/5 m-auto min-[600px]:grid-cols-2 grid lg:grid-cols-3 gap-4 ">
         {blogsItems?.map((blog, index) => {
           return (
-            <div
+            <div key={index}
               className="flex flex-col mb-6 justify-center items-center text-center "
               data-aos="zoom-in"
             >
@@ -52,4 +53,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default React.memo(Blogs);

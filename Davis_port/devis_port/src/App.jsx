@@ -8,7 +8,7 @@ import About from "./Pages/About";
 import HeroSection from "./Pages/HeroSection";
 import AllRoutes from "./Routing/AllRoutes";
 import AOS from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 import Services from "./Pages/Services";
 import Skills from "./Pages/Skills";
 import Reserve from "./Component/Reserve";
@@ -23,15 +23,12 @@ function App() {
   return (
     <div>
       <Navbar />
-     
       <div className="flex flex-col justify-center items-center m-auto ">
-       <AllRoutes/>
+        <AllRoutes />
       </div>
-      <Reserve/>
-      <Time/>
-      
+      <Reserve />
+      <Time />
     </div>
-
   );
 }
 

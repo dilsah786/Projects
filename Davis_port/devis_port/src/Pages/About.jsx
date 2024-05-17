@@ -10,6 +10,8 @@ const About = () => {
     AOS.init();
   }, []);
 
+
+
   return (
     <div className="mt-36  bg-[#0a101e] pt-8 pb-10">
     <div className="mt-24 lg:mt-0">
@@ -70,4 +72,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default React.memo(About);

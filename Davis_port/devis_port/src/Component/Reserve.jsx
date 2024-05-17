@@ -8,4 +8,4 @@ const Reserve = () => {
   )
 }
 
-export default Reserve
+export default React.memo(Reserve)
