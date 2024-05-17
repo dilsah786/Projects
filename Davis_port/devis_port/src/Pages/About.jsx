@@ -12,7 +12,10 @@ const About = () => {
 
   return (
     <div className="mt-36  bg-[#0a101e] pt-8 pb-10">
-      <Title text={"ABOUT ME"} />
+    <div className="mt-24 lg:mt-0">
+    <Title text={"ABOUT ME"} />
+    </div>
+     
       <div className="flex w-4/5 flex-col  lg:justify-around lg:flex-row lg:gap-16 m-auto">
         <div className="mb-6" data-aos="zoom-in-up" data-aos-duration="1500">
           <img className="lg:w-[1200px]" src={heroImage} />

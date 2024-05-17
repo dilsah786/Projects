@@ -7,7 +7,7 @@ import { educationItems, experienceItems } from "../utils/dataUtils";
 const Resume = () => {
   return (
     <div className="mt-16  pt-12 lg:pt-0 bg-[#070d1b] ">
-      <div>
+      <div className="mt-24 lg:mt-12 lg:pt-12">
         <Title text={"resume"} />
       </div>
       <div className="w-4/5 lg:m-auto flex m-auto pb-16">

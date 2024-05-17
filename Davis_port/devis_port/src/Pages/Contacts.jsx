@@ -5,8 +5,8 @@ import Title from "../Component/Title";
 
 const Contacts = () => {
   return (
-    <div className="mt-24 pb-6">
-    <div>
+    <div className="mt-20 pb-6">
+    <div className="mt-48 lg:mt-12 lg:pt-12" >
     <Title text={"Contact me"} />
     </div>
 

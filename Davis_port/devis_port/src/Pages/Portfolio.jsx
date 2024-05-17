@@ -11,8 +11,8 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="bg-[#0a101e] lg:mt-16 lg:pt-8  mb-18 pb-12  mt-24 pt-12 ">
-      <div className="">
+    <div className="bg-[#0a101e] lg:mt-16 lg:pt-8  mb-18 pb-12  pt-12 ">
+      <div className="mt-36 lg:mt-12">
         <Title text={"portfolios"} />
       </div>
       <div className="w-4/5 flex justify-center items-center m-auto">

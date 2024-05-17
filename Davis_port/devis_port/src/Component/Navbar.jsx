@@ -23,18 +23,21 @@ const Navbar = () => {
       <div className=" m-auto sticky  overflow-hidden">
         <nav className="  flex justify-around items-center p-8   m-auto ">
           <div className="">
-           <Link to="/" > <img className="w-28 lg:w-40 md:w-40" src={logo} /></Link>
+            <Link to="/">
+              {" "}
+              <img className="w-28 lg:w-40 md:w-40" src={logo} />
+            </Link>
           </div>
           <div className="flex justify-end">
             <ul className=" hidden  lg:flex justify-around items-center gap-8">
               {navItems.map((nav, index) => {
                 return (
-                  <li className="text-xl cursor-pointer hover:text-yellow-500">
-                  <a href={nav.href} className="">
+                  <Link to={nav.href}>
+                    <li className="text-xl cursor-pointer hover:text-yellow-500">
                       {" "}
                       {nav.text}{" "}
-                    </a>
-                  </li>
+                    </li>
+                  </Link>
                 );
               })}
             </ul>
@@ -59,12 +62,12 @@ const Navbar = () => {
             <ul>
               {mobileNavItems.map((nav, index) => {
                 return (
+                  <Link to={nav.href}>
                   <li key={index} className="py-3 text-[18px] hover:underline">
-                    <a href={nav.href} className="">
-                      {" "}
-                      {nav.text}{" "}
-                    </a>
+                    {nav.text} 
                   </li>
+                  </Link>
+                  
                 );
               })}
             </ul>

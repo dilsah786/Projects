@@ -5,10 +5,10 @@ import { skillsItems } from "../utils/dataUtils";
 const Skills = () => {
   return (
     <div className="lg:mt-16 mt-36 bg-[#070d1b] pb-20">
+      <div className="mt-48 lg:mt-20 lg:pt-12">
+        <Title text={"my skills"} />
+      </div>
       <div className="lg:w-4/5 justify-center items-center m-auto">
-        <div>
-          <Title text={"my skills"} />
-        </div>
         {/*  Skill starts here*/}
         <div className="flex lg:flex-row flex-col justify-center items-center gap-4 lg:gap-6">
           <div className="lg:w-2/4 w-4/5">
