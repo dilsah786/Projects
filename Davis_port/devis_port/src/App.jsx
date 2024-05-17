@@ -12,6 +12,7 @@ import 'aos/dist/aos.css';
 import Services from "./Pages/Services";
 import Skills from "./Pages/Skills";
 import Reserve from "./Component/Reserve";
+import Time from "./Component/Time";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -22,12 +23,15 @@ function App() {
   return (
     <div>
       <Navbar />
+     
       <div className="flex flex-col justify-center items-center m-auto ">
        <AllRoutes/>
       </div>
       <Reserve/>
+      <Time/>
       
     </div>
+
   );
 }
 
