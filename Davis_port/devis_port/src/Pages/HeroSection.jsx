@@ -24,7 +24,7 @@ const HeroSection = () => {
           <h1 className="text-yellow-500 font-thin text-3xl pl-1 tracking-wide">
             Hello, I'm
           </h1>
-          <h1 className="text-white font-extrabold text-7xl lg:text-9xl  ">
+          <h1 className="text-white font-extrabold text-8xl lg:text-9xl  ">
             Edward <br/> Davis
           </h1>
           <p className="text-gray-400 text-3xl lg:text-4xl mt-8 pl-1 tracking-wide">
