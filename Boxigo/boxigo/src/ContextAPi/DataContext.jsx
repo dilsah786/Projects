@@ -9,7 +9,7 @@ export const DataProvider = ({ children }) => {
   const [singleData, setSingleData] = useState([]);
   const [indexForData, setIndexForData] = useState(0);
   const [items,setItems] = useState([]);
-
+  const [loading,setLoading] = useState(true)
 
 
 
@@ -20,15 +20,19 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true)
         const response = await fetch("http://test.api.boxigo.in/sample-data/");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
         setData(data.Customer_Estimate_Flow);
+        setLoading(fasle)
       } catch (error) {
         console.error("Error fetching data:", error);
+        setLoading(true)
       }
+     
     };
 
     fetchData();
@@ -39,6 +43,7 @@ export const DataProvider = ({ children }) => {
       let newData = data.map((d, index) => {
         if (index === indexForData) {
           setSingleData(JSON.parse(JSON.stringify(d)));
+          setLoading(false)
         }
         return d;
       });
@@ -46,12 +51,12 @@ export const DataProvider = ({ children }) => {
     setItems(singleData.items)
   }, [data, indexForData]);
 
-  
+  console.log(indexForData);
 
   localStorage.setItem("SingleItemDetails", JSON.stringify(singleData));
 
   return (
-    <DataContext.Provider value={{ data, singleData, getIndexForSingleData }}>
+    <DataContext.Provider value={{ data, singleData, getIndexForSingleData ,loading}}>
       {children}
     </DataContext.Provider>
   );
