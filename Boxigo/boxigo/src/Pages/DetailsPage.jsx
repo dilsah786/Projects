@@ -7,8 +7,9 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import SideBar from "../Components/SideBar";
 import Loader from "../Components/Loader";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Accordion from "./Accordion";
 
 const DetailsPage = () => {
   const [data, setData] = useState([]);
@@ -17,23 +18,21 @@ const DetailsPage = () => {
   const [id, setId] = useState(-1);
   const { singleData, loading } = useContext(DataContext);
 
-
-
   const openModel = (id) => {
     setModel(!model);
     setId(id);
   };
 
+  console.log(data);
 
   useEffect(() => {
     setData(singleData);
     setItems(singleData.items?.inventory);
   }, [singleData]);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     AOS.init();
-  },[])
+  }, []);
 
   return (
     <div className="w-[85%] m-auto mb-10 ">
@@ -41,11 +40,14 @@ const DetailsPage = () => {
         <Loader />
       ) : (
         <div className="flex">
-          <div className="mt-10 lg:w-[20%] w-[30%] hidden lg:flex lg:flex-col" data-aos="fade-right">
+          <div
+            className="mt-10 lg:w-[20%] w-[30%] hidden lg:flex lg:flex-col"
+            data-aos="fade-right"
+          >
             <SideBar />
           </div>
           <div>
-            <div className="lg:-ml-20" >
+            <div className="lg:-ml-20">
               {/* Parcel div */}
               <div className="flex flex-col">
                 <div className="text-[16px] pt-10 lg:ml-20 ml-10">
@@ -190,7 +192,10 @@ const DetailsPage = () => {
               </div>
             </div>
             {/* Additional Parts start here */}
-            <div className="flex justify-between items-center mt-5" data-aos="fade-right" data-aos-duration="800">
+            <div
+              className="flex justify-between items-center mt-5"
+              
+            >
               <div>
                 <h1 className="text-black font-bold lg:text-xl md:text-lg  ">
                   Additional Information
@@ -205,7 +210,10 @@ const DetailsPage = () => {
             </div>
             {/*  */}
             <div className="flex flex-col">
-              <div className="flex justify-between items-center mt-5" data-aos="fade-left" data-aos-duration="900">
+              <div
+                className="flex justify-between items-center mt-5"
+                
+              >
                 <div>
                   <h1 className="text-black font-bold lg:text-xl md:text-lg  ">
                     House Details
@@ -219,7 +227,10 @@ const DetailsPage = () => {
                 </div>
               </div>
               {/*  */}
-              <div className="flex flex-col" data-aos="fade-right" data-aos-duration="600">
+              <div
+                className="flex flex-col"
+                
+              >
                 <h1 className="text-orange-600 font-semibold">
                   Existing House Details
                 </h1>
@@ -245,7 +256,7 @@ const DetailsPage = () => {
               {/*  */}
 
               {/*  */}
-              <div data-aos="fade-left" data-aos-duration="600">
+              <div >
                 <h1 className="text-orange-600 font-semibold">
                   New House Details
                 </h1>
@@ -293,32 +304,70 @@ const DetailsPage = () => {
                 return (
                   <div
                     key={item.id}
-                    className="flex justify-between bg-gray-300 p-2 " 
+                    className="flex justify-between bg-gray-300 p-2 "
                     data-aos="fade-up"
-                    data-aos-duration="600"
+                    data-aos-duration="200"
                   >
-                    <div>
+                    <div className="flex gap-2">
                       <h1 className="text-orange-600 font-semibold">
                         {item.displayName}{" "}
-                        <span className="text-white w-10 h-10  ml-2 p-2 rounded-full  bg-orange-600">
-                          {" "}
-                          {item.category.length}{" "}
-                        </span>{" "}
                       </h1>
+                      <h1 className="text-white w-8 h-8 pl-3 pt-1 rounded-full bg-orange-600">
+                        {" "}
+                        {item.category.length}{" "}
+                      </h1>{" "}
                     </div>
                     <div>
                       <button onClick={() => openModel(index)}>
                         {model ? <ArrowUp /> : <ArrowDown />}
                       </button>
                     </div>
+                  {model }
+                    {items.category?.map((item) => {
+                      return (
+                        <div key={item.id}>
+                          <div>
+                            {" "}
+                            <div>
+                              <h1 className="text-black font-semibold  lg:text-xl text-lg">
+                                {item.displayName}{" "}
+                              </h1>
+                              <div>
+                                {" "}
+                                {item.items?.map((el) => {
+                                  return (
+                                    <div className="flex justify-between gap-2">
+                                      <p className="pb-2 font-semibold text-slate-600">
+                                        {" "}
+                                        {el.displayName}{" "}
+                                      </p>
+                                      <p className="font-medium text-slate-600">
+                                        {el.qty}
+                                      </p>
+                                    </div>
+                                  );
+                                })}{" "}
+                              </div>
+                            </div>{" "}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  
                   </div>
+                  
                 );
               })}
+              
 
-              {/*  */}
-              <div className={`${id === 0 ? "flex" : "hidden"}`}  >
+               
+               <div className={`${id === 0 ? "flex" : "hidden"}`}> 
                 {model && (
-                  <div className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4" data-aos="fade-down" data-aos-duration="600">
+                  <div
+                    className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4"
+                    data-aos="fade-down"
+                    data-aos-duration="600"
+                  >
                     {items[0].category?.map((item) => {
                       return (
                         <div key={item.id}>
@@ -326,18 +375,21 @@ const DetailsPage = () => {
                             {" "}
                             <div>
                               <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName} {" "}
+                                {item.displayName}{" "}
                               </h1>
                               <div>
                                 {" "}
                                 {item.items?.map((el) => {
-                                  return (<div className="flex gap-4">
-                                    <p className="pb-2 font-semibold text-slate-900">
-                                      {" "}
-                                      {el.displayName}{" "}
-                                    </p>
-                                    <p className="font-medium">{el.qty }</p>
-                                  </div>
+                                  return (
+                                    <div className="flex justify-between gap-2">
+                                      <p className="pb-2 font-semibold text-slate-600">
+                                        {" "}
+                                        {el.displayName}{" "}
+                                      </p>
+                                      <p className="font-medium text-slate-600">
+                                        {el.qty}
+                                      </p>
+                                    </div>
                                   );
                                 })}{" "}
                               </div>
@@ -349,9 +401,13 @@ const DetailsPage = () => {
                   </div>
                 )}
               </div>
-              <div className={`${id === 1 ? "flex" : "hidden"}`} >
+              <div className={`${id === 1 ? "flex" : "hidden"}`}>
                 {model && (
-                  <div className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4" data-aos="fade-down" data-aos-duration="600">
+                  <div
+                    className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4"
+                    data-aos="fade-down"
+                    data-aos-duration="600"
+                  >
                     {items[1].category?.map((item) => {
                       return (
                         <div key={item.id}>
@@ -359,19 +415,21 @@ const DetailsPage = () => {
                             {" "}
                             <div>
                               <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName} {" "}
+                                {item.displayName}{" "}
                               </h1>
                               <div>
                                 {" "}
                                 {item.items?.map((el) => {
-                                  return (<div className="flex gap-4">
-                                    <p className="pb-2 font-semibold text-slate-900">
-                                      {" "}
-                                      {el.displayName}{" "}
-                                    </p>
-                                    <p className="font-medium">{el.qty }</p>
-                                  </div>
-                                   
+                                  return (
+                                    <div className="flex justify-between gap-2">
+                                      <p className="pb-2 font-semibold text-slate-600">
+                                        {" "}
+                                        {el.displayName}{" "}
+                                      </p>
+                                      <p className="font-medium text-slate-600">
+                                        {el.qty}
+                                      </p>
+                                    </div>
                                   );
                                 })}{" "}
                               </div>
@@ -383,9 +441,13 @@ const DetailsPage = () => {
                   </div>
                 )}
               </div>
-              <div className={`${id === 2 ? "flex" : "hidden"}`} >
+              <div className={`${id === 2 ? "flex" : "hidden"}`}>
                 {model && (
-                  <div className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4" data-aos="fade-down" data-aos-duration="600">
+                  <div
+                    className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4"
+                    data-aos="fade-down"
+                    data-aos-duration="600"
+                  >
                     {items[2].category?.map((item) => {
                       return (
                         <div key={item.id}>
@@ -393,18 +455,21 @@ const DetailsPage = () => {
                             {" "}
                             <div>
                               <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName} {" "}
+                                {item.displayName}{" "}
                               </h1>
                               <div>
                                 {" "}
                                 {item.items?.map((el) => {
-                                  return (<div className="flex gap-4">
-                                    <p className="pb-2 font-semibold text-slate-900">
-                                      {" "}
-                                      {el.displayName}{" "}
-                                    </p>
-                                    <p className="font-medium">{el.qty }</p>
-                                  </div>
+                                  return (
+                                    <div className="flex justify-between gap-2">
+                                      <p className="pb-2 font-semibold text-slate-600">
+                                        {" "}
+                                        {el.displayName}{" "}
+                                      </p>
+                                      <p className="font-medium text-slate-600">
+                                        {el.qty}
+                                      </p>
+                                    </div>
                                   );
                                 })}{" "}
                               </div>
@@ -416,9 +481,13 @@ const DetailsPage = () => {
                   </div>
                 )}
               </div>
-              <div className={`${id === 3 ? "flex" : "hidden"}`} >
+              <div className={`${id === 3 ? "flex" : "hidden"}`}>
                 {model && (
-                  <div className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4" data-aos="fade-down" data-aos-duration="600">
+                  <div
+                    className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4"
+                    data-aos="fade-down"
+                    data-aos-duration="600"
+                  >
                     {items[3].category?.map((item) => {
                       return (
                         <div key={item.id}>
@@ -426,18 +495,21 @@ const DetailsPage = () => {
                             {" "}
                             <div>
                               <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName} {" "}
+                                {item.displayName}{" "}
                               </h1>
                               <div>
                                 {" "}
                                 {item.items?.map((el) => {
-                                  return (<div className="flex gap-4">
-                                    <p className="pb-2 font-semibold text-slate-900">
-                                      {" "}
-                                      {el.displayName}{" "}
-                                    </p>
-                                    <p className="font-medium">{el.qty }</p>
-                                  </div>
+                                  return (
+                                    <div className="flex justify-between gap-2">
+                                      <p className="pb-2 font-semibold text-slate-600">
+                                        {" "}
+                                        {el.displayName}{" "}
+                                      </p>
+                                      <p className="font-medium text-slate-600">
+                                        {el.qty}
+                                      </p>
+                                    </div>
                                   );
                                 })}{" "}
                               </div>
@@ -449,9 +521,13 @@ const DetailsPage = () => {
                   </div>
                 )}
               </div>
-              <div className={`${id === 4 ? "flex" : "hidden"}`} >
+              <div className={`${id === 4 ? "flex" : "hidden"}`}>
                 {model && (
-                  <div className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4" data-aos="fade-down" data-aos-duration="600">
+                  <div
+                    className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4"
+                    data-aos="fade-down"
+                    data-aos-duration="600"
+                  >
                     {items[4].category?.map((item) => {
                       return (
                         <div key={item.id}>
@@ -459,18 +535,21 @@ const DetailsPage = () => {
                             {" "}
                             <div>
                               <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName} {" "}
+                                {item.displayName}{" "}
                               </h1>
                               <div>
                                 {" "}
                                 {item.items?.map((el) => {
-                                  return (<div className="flex gap-4">
-                                    <p className="pb-2 font-semibold text-slate-900">
-                                      {" "}
-                                      {el.displayName}{" "}
-                                    </p>
-                                    <p className="font-medium">{el.qty }</p>
-                                  </div>
+                                  return (
+                                    <div className="flex justify-between gap-2">
+                                      <p className="pb-2 font-semibold text-slate-600">
+                                        {" "}
+                                        {el.displayName}{" "}
+                                      </p>
+                                      <p className="font-medium text-slate-600">
+                                        {el.qty}
+                                      </p>
+                                    </div>
                                   );
                                 })}{" "}
                               </div>
@@ -479,9 +558,10 @@ const DetailsPage = () => {
                         </div>
                       );
                     })}
-                  </div>
+                  </div> 
                 )}
               </div>
+              
             </div>
           </div>
         </div>

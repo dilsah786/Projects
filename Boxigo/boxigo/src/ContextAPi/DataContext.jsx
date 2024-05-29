@@ -10,12 +10,14 @@ export const DataProvider = ({ children }) => {
   const [indexForData, setIndexForData] = useState(0);
   const [items,setItems] = useState([]);
   const [loading,setLoading] = useState(true)
+  const [toggle,setToggle] = useState(false)
 
 
-  console.log(singleData);
-
+  localStorage.setItem("data",JSON.stringify(data))
+  
   const getIndexForSingleData = (idx) => {
     setIndexForData(idx);
+    setToggle(true);
   };
 
   useEffect(() => {
@@ -26,13 +28,15 @@ export const DataProvider = ({ children }) => {
         const data = await response.json();
         console.log(data);
         setData(data.Customer_Estimate_Flow);
-        setLoading(fasle)
+        setLoading(false)
       } catch (error) {
         console.error("Error fetching data:", error);
         setLoading(true)
       }
      
     };
+
+    setData(JSON.parse(localStorage.getItem("data")))
 
     fetchData();
   }, []);
@@ -50,12 +54,11 @@ export const DataProvider = ({ children }) => {
     setItems(singleData.items)
   }, [data, indexForData]);
 
-  console.log(indexForData);
 
   localStorage.setItem("SingleItemDetails", JSON.stringify(singleData));
 
   return (
-    <DataContext.Provider value={{ data, singleData, getIndexForSingleData ,loading}}>
+    <DataContext.Provider value={{ data, singleData, getIndexForSingleData ,loading,toggle}}>
       {children}
     </DataContext.Provider>
   );

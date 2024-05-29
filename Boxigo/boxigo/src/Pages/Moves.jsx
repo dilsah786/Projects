@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { navbarItems } from "../ConfigFile/dataConfig.js";
 import { ArrowRight, Blocks, CheckSquare } from "lucide-react";
 import { DataContext } from "../ContextAPi/DataContext.jsx";
@@ -9,24 +9,22 @@ import { Link } from "react-router-dom";
 import { Bars, MutatingDots } from "react-loader-spinner";
 import SideBar from "../Components/SideBar.jsx";
 import Loader from "../Components/Loader.jsx";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import DetailsPage from "./DetailsPage.jsx";
 
 const Moves = () => {
-  const { data, singleData, getIndexForSingleData, loading } =
+  const { data, singleData, getIndexForSingleData, loading, toggle } =
     useContext(DataContext);
 
-    useEffect(()=>{
-      AOS.init();
-    },[])
-
-
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div className="w-[90%] m-auto mb-10 ">
       {loading ? (
-       <Loader/>
+        <Loader />
       ) : (
         <div className="flex lg:mt-0 mt-20">
           <div className="mt-10 lg:w-[20%] w-[30%] hidden lg:flex lg:flex-col">
@@ -46,7 +44,7 @@ const Moves = () => {
                   key={data.estimate_id}
                   className="  ml-10 lg:ml-20 lg:w-[90%]  w-[80%]"
                 >
-                  <div className="shadow-sm" data-aos="fade-up" >
+                  <div className="shadow-sm" data-aos="fade-up">
                     <div className=" w-full mt-10 flex justify-between">
                       <div className="w-1/4">
                         <h1 className="text-black font-bold">From</h1>
