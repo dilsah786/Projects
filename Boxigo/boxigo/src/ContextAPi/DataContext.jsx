@@ -22,10 +22,8 @@ export const DataProvider = ({ children }) => {
       try {
         setLoading(true)
         const response = await fetch("http://test.api.boxigo.in/sample-data/");
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
         const data = await response.json();
+        console.log(data);
         setData(data.Customer_Estimate_Flow);
         setLoading(fasle)
       } catch (error) {

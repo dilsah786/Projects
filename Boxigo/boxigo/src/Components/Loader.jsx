@@ -3,9 +3,9 @@ import { Bars } from 'react-loader-spinner'
 
 const Loader = () => {
   return (
-    <div>
+    <div className='mb-28'>
     
-    <h1 className="flex justify-center items-center m-auto mt-52">
+    <h1 className="flex justify-center items-center m-auto mt-36">
           {" "}
           <Bars
             visible={true}
@@ -19,6 +19,7 @@ const Loader = () => {
             wrapperClass=""
           />{" "}
         </h1>
+        <h1 className='text-center text-xl font-bold'>Data Loading...</h1>
 
     </div>
   )

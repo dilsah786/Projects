@@ -12,15 +12,15 @@ const Navbar = () => {
   }
 
   return (
-    <div className="w-[90%] pt-6 m-auto border-b pb-2">
+    <div className="w-[100%] lg:w-[90%]  pt-6 m-auto border-b pb-2   top-0 lg:bg-white bg-slate-400  opacity-100 lg:static fixed">
       <div className="flex flex-col">
         <div className="flex justify-between">
-          <div className="">
+          <div className="sticky">
             {" "}
-           <Link to="/" > <img className="max-[500px]:w-36" src={logo} width={200} /></Link>
+           <Link to="/" > <img className="max-[500px]:w-36 ml-4 " src={logo} width={200} /></Link>
           </div>
 
-          <div className="flex justify-center items-center lg:hidden fixed right-5">
+          <div className="flex justify-center items-center lg:hidden fixed right-5 top-10 ">
             <button onClick={openSideBar}>
               {sideBar ? <X size={30} /> : <Menu size={30} />}
             </button>
