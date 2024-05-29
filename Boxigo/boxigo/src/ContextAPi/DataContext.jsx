@@ -12,6 +12,7 @@ export const DataProvider = ({ children }) => {
   const [loading,setLoading] = useState(true)
 
 
+  console.log(singleData);
 
   const getIndexForSingleData = (idx) => {
     setIndexForData(idx);

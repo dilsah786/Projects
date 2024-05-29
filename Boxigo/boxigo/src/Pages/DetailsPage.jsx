@@ -326,16 +326,18 @@ const DetailsPage = () => {
                             {" "}
                             <div>
                               <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName} <span> 1 </span>{" "}
+                                {item.displayName} {" "}
                               </h1>
                               <div>
                                 {" "}
                                 {item.items?.map((el) => {
-                                  return (
-                                    <p className="pb-2 font-medium text-gray-600">
+                                  return (<div className="flex gap-4">
+                                    <p className="pb-2 font-semibold text-slate-900">
                                       {" "}
                                       {el.displayName}{" "}
                                     </p>
+                                    <p className="font-medium">{el.qty }</p>
+                                  </div>
                                   );
                                 })}{" "}
                               </div>
@@ -357,16 +359,19 @@ const DetailsPage = () => {
                             {" "}
                             <div>
                               <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName} <span> 1 </span>{" "}
+                                {item.displayName} {" "}
                               </h1>
                               <div>
                                 {" "}
                                 {item.items?.map((el) => {
-                                  return (
-                                    <p className="pb-2 font-medium text-gray-600">
+                                  return (<div className="flex gap-4">
+                                    <p className="pb-2 font-semibold text-slate-900">
                                       {" "}
                                       {el.displayName}{" "}
                                     </p>
+                                    <p className="font-medium">{el.qty }</p>
+                                  </div>
+                                   
                                   );
                                 })}{" "}
                               </div>
@@ -388,16 +393,18 @@ const DetailsPage = () => {
                             {" "}
                             <div>
                               <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName} <span> 1 </span>{" "}
+                                {item.displayName} {" "}
                               </h1>
                               <div>
                                 {" "}
                                 {item.items?.map((el) => {
-                                  return (
-                                    <p className="pb-2 font-medium text-gray-600">
+                                  return (<div className="flex gap-4">
+                                    <p className="pb-2 font-semibold text-slate-900">
                                       {" "}
                                       {el.displayName}{" "}
                                     </p>
+                                    <p className="font-medium">{el.qty }</p>
+                                  </div>
                                   );
                                 })}{" "}
                               </div>
@@ -419,16 +426,18 @@ const DetailsPage = () => {
                             {" "}
                             <div>
                               <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName} <span> 1 </span>{" "}
+                                {item.displayName} {" "}
                               </h1>
                               <div>
                                 {" "}
                                 {item.items?.map((el) => {
-                                  return (
-                                    <p className="pb-2 font-medium text-gray-600">
+                                  return (<div className="flex gap-4">
+                                    <p className="pb-2 font-semibold text-slate-900">
                                       {" "}
                                       {el.displayName}{" "}
                                     </p>
+                                    <p className="font-medium">{el.qty }</p>
+                                  </div>
                                   );
                                 })}{" "}
                               </div>
@@ -450,16 +459,18 @@ const DetailsPage = () => {
                             {" "}
                             <div>
                               <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName} <span> 1 </span>{" "}
+                                {item.displayName} {" "}
                               </h1>
                               <div>
                                 {" "}
                                 {item.items?.map((el) => {
-                                  return (
-                                    <p className="pb-2 font-medium text-gray-600">
+                                  return (<div className="flex gap-4">
+                                    <p className="pb-2 font-semibold text-slate-900">
                                       {" "}
                                       {el.displayName}{" "}
                                     </p>
+                                    <p className="font-medium">{el.qty }</p>
+                                  </div>
                                   );
                                 })}{" "}
                               </div>
