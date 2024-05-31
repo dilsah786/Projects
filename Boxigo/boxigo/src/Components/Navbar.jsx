@@ -1,65 +1,57 @@
 import React, { useState } from "react";
 import { navbarItems } from "../ConfigFile/dataConfig";
 import logo from "../assets/boxigo_logo_small.png";
-import { Cross, Menu, X } from "lucide-react";
+import { X, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [sideBar, setSideBar] = useState(false);
 
-
-  const openSideBar = ()=>{
-    setSideBar(!sideBar)
-  }
+  const openSideBar = () => {
+    setSideBar(!sideBar);
+  };
 
   return (
-    <div className="w-[100%] lg:w-[90%]  pt-6 m-auto border-b pb-2   top-0 lg:bg-white bg-slate-400  opacity-100 lg:static fixed">
+    <div className="w-full lg:w-4/5 pt-6 mx-auto border-b pb-2 top-0 lg:bg-white bg-slate-400 opacity-100 lg:static fixed z-50">
       <div className="flex flex-col">
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <div className="sticky">
-            {" "}
-           <Link to="/" > <img className="max-[500px]:w-36 ml-4 " src={logo} width={200} /></Link>
+            <Link to="/">
+              <img className="w-36 ml-4 lg:w-52" src={logo} alt="Logo" />
+            </Link>
           </div>
 
-          <div className="flex justify-center items-center lg:hidden fixed right-5 top-10 ">
+          <div className="lg:hidden fixed right-5 top-10">
             <button onClick={openSideBar}>
               {sideBar ? <X size={30} /> : <Menu size={30} />}
             </button>
           </div>
 
-          <div className="  justify-center items-center lg:flex hidden">
-            <Link to="/">
-            <ul className="flex gap-6 justify-center items-center">
-              <li>ABOUT US</li>
-              <li>GET QUOTE</li>
-              <li>VENDORS</li>
-              <li>CONTACT</li>
-              <li>FAQ</li>
+          <div className="hidden lg:flex gap-6">
+            <ul className="flex gap-6 items-center">
+              <li><Link to="/">ABOUT US</Link></li>
+              <li><Link to="/">GET QUOTE</Link></li>
+              <li><Link to="/">VENDORS</Link></li>
+              <li><Link to="/">CONTACT</Link></li>
+              <li><Link to="/">FAQ</Link></li>
             </ul>
-            </Link>
           </div>
         </div>
-        <div className="flex justify-center items-center fixed ml-[166px] top-48 lg:hidden " >
+
         {sideBar && (
-          <div className="fixed flex flex-col justify-center items-center right-0 w-full bg-slate-200 ">
-            {navbarItems?.map((item, index) => {
-              return (
-                <Link key={index} to="/" >
-                <ul onClick={openSideBar}
-                  className=""
-                  key={index}
-                >
-                  <img className="m-auto py-2 flex justify-center items-center" src={item.icon} />
-                  <li className="mb-2 ">
-                    {item.name}{" "}
-                  </li>
-                </ul>
+          <div className="fixed top-20 right-0 w-full bg-slate-400 opacity-100 lg:hidden z-40">
+            <div className="flex flex-col items-center py-6">
+              {navbarItems?.map((item, index) => (
+                <Link key={index} to="/" onClick={openSideBar} className="w-full text-center">
+                  <ul key={index} className="py-2">
+                    <img className="m-auto" src={item.icon} alt={`${item.name} icon`} />
+                    <li className="mt-2">{item.name}</li>
+                  </ul>
                 </Link>
-                
-              );
-            })}
+              ))}
+            </div>
           </div>
         )}
-        </div>
       </div>
     </div>
   );

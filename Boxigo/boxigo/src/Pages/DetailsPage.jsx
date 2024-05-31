@@ -17,13 +17,11 @@ const DetailsPage = () => {
   const [items, setItems] = useState([]);
   const [id, setId] = useState(-1);
   const { singleData, loading } = useContext(DataContext);
+  const [expandedItemIndex, setExpandedItemIndex] = useState(null);
 
-  const openModel = (id) => {
-    setModel(!model);
-    setId(id);
+  const handleButtonClick = (index) => {
+    setExpandedItemIndex(index === expandedItemIndex ? null : index);
   };
-
-  console.log(data);
 
   useEffect(() => {
     setData(singleData);
@@ -60,8 +58,8 @@ const DetailsPage = () => {
                   key={data.estimate_id}
                   className=" ml-10 lg:ml-20 lg:w-[90%]  w-[80%] "
                 >
-                  <div className=" w-full mt-10 flex justify-between">
-                    <div className="w-1/4">
+                  <div className=" lg:w-full mt-10 flex justify-between lg:justify-between">
+                    <div className="lg:w-1/4 w-1/3">
                       <h1 className="text-black font-bold">From</h1>
                       <p className="text-wrap lg:text-xl text-lg  max-[500px]:text-sm">
                         {" "}
@@ -71,7 +69,7 @@ const DetailsPage = () => {
                     <div className="bg-neutral-200 hidden lg:flex justify-center items-center w-10 h-10 rounded-full text-[#ee553b]">
                       <ArrowRight />{" "}
                     </div>
-                    <div className="w-1/4 ">
+                    <div className="lg:w-1/4 w-1/3 ">
                       <h1 className="text-black font-bold lg:text-xl text-lg  max-[500px]:text-sm">
                         To
                       </h1>
@@ -82,7 +80,7 @@ const DetailsPage = () => {
                     </div>
 
                     <div className="flex justify-start">
-                      <div className="w-1/4">
+                      <div className="lg:w-1/4 w-1/3">
                         <h1 className="text-black font-bold lg:text-xl text-lg  max-[500px]:text-sm">
                           Request#
                         </h1>
@@ -192,10 +190,7 @@ const DetailsPage = () => {
               </div>
             </div>
             {/* Additional Parts start here */}
-            <div
-              className="flex justify-between items-center mt-5"
-              
-            >
+            <div className="flex justify-between items-center mt-5 mb-5">
               <div>
                 <h1 className="text-black font-bold lg:text-xl md:text-lg  ">
                   Additional Information
@@ -203,17 +198,14 @@ const DetailsPage = () => {
               </div>
               <div>
                 {" "}
-                <button className="bg-black text-white font-medium p-1 rounded-sm">
+                <button className="bg-black text-white lg:text-lg text-sm lg:font-medium lg:p-2 p-1 rounded-sm">
                   Edit Additional Info
                 </button>{" "}
               </div>
             </div>
             {/*  */}
             <div className="flex flex-col">
-              <div
-                className="flex justify-between items-center mt-5"
-                
-              >
+              <div className="flex justify-between items-center mt-5 mb-5">
                 <div>
                   <h1 className="text-black font-bold lg:text-xl md:text-lg  ">
                     House Details
@@ -221,17 +213,14 @@ const DetailsPage = () => {
                 </div>
                 <div>
                   {" "}
-                  <button className="bg-black text-white font-medium p-1 rounded-sm">
+                  <button className="bg-black text-white font-medium lg:p-2 p-1 rounded-sm lg:text-lg text-sm lg:font-medium">
                     Edit House Details
                   </button>{" "}
                 </div>
               </div>
               {/*  */}
-              <div
-                className="flex flex-col"
-                
-              >
-                <h1 className="text-orange-600 font-semibold">
+              <div className="flex flex-col mb-5">
+                <h1 className="text-orange-600 font-bold">
                   Existing House Details
                 </h1>
                 <div className="flex justify-between">
@@ -256,8 +245,8 @@ const DetailsPage = () => {
               {/*  */}
 
               {/*  */}
-              <div >
-                <h1 className="text-orange-600 font-semibold">
+              <div className="mb-5">
+                <h1 className="text-orange-600 font-bold">
                   New House Details
                 </h1>
                 <div className="flex justify-between">
@@ -291,277 +280,69 @@ const DetailsPage = () => {
               </div>
               <div>
                 {" "}
-                <button className="bg-black text-white font-medium p-1 rounded-sm">
+                <button className="bg-black text-white font-medium lg:p-2 p-1 rounded-sm lg:text-lg text-sm lg:font-medium">
                   Edit Inventory
                 </button>{" "}
               </div>
             </div>
 
-            {/* Main div */}
             <div className="flex flex-col gap-1">
-              {/*  */}
-              {items?.map((item, index) => {
-                return (
-                  <div
-                    key={item.id}
-                    className="flex justify-between bg-gray-300 p-2 "
-                    data-aos="fade-up"
-                    data-aos-duration="200"
-                  >
-                    <div className="flex gap-2">
-                      <h1 className="text-orange-600 font-semibold">
-                        {item.displayName}{" "}
-                      </h1>
-                      <h1 className="text-white w-8 h-8 pl-3 pt-1 rounded-full bg-orange-600">
-                        {" "}
-                        {item.category.length}{" "}
-                      </h1>{" "}
+              {items?.map((item, index) => (
+                <div
+                  key={item.id}
+                  className="flex justify-between bg-gray-300 p-2"
+                  data-aos="fade-up"
+                  data-aos-duration="200"
+                >
+                  <div className="flex gap-2">
+                    <h1 className="text-orange-600 font-semibold">
+                      {item.displayName}
+                    </h1>
+                    <h1 className="text-white w-8 h-8 pl-3 pt-1 rounded-full bg-orange-600">
+                      {item.category.length}
+                    </h1>
+                  </div>
+                  <div>
+                    <button onClick={() => handleButtonClick(index)}>
+                      {expandedItemIndex === index ? (
+                        <ArrowUp />
+                      ) : (
+                        <ArrowDown />
+                      )}
+                    </button>
+                  </div>
+                  {expandedItemIndex === index && (
+                    <div
+                      className="flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 justify-between gap-4"
+                      data-aos="fade-down"
+                      data-aos-duration="600"
+                    >
+                      {item.category?.map((categoryItem) => (
+                        <div key={categoryItem.id}>
+                          <h1 className="text-black font-semibold lg:text-xl text-lg">
+                            {categoryItem.displayName}
+                          </h1>
+                          <div>
+                            {categoryItem.items?.map((el) => (
+                              <div
+                                key={el.id}
+                                className="flex justify-between gap-2"
+                              >
+                                <p className="pb-2 font-semibold text-slate-600">
+                                  {el.displayName}
+                                </p>
+                                <p className="font-medium text-slate-600">
+                                  {el.qty}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                    <div>
-                      <button onClick={() => openModel(index)}>
-                        {model ? <ArrowUp /> : <ArrowDown />}
-                      </button>
-                    </div>
-                  {model }
-                    {items.category?.map((item) => {
-                      return (
-                        <div key={item.id}>
-                          <div>
-                            {" "}
-                            <div>
-                              <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName}{" "}
-                              </h1>
-                              <div>
-                                {" "}
-                                {item.items?.map((el) => {
-                                  return (
-                                    <div className="flex justify-between gap-2">
-                                      <p className="pb-2 font-semibold text-slate-600">
-                                        {" "}
-                                        {el.displayName}{" "}
-                                      </p>
-                                      <p className="font-medium text-slate-600">
-                                        {el.qty}
-                                      </p>
-                                    </div>
-                                  );
-                                })}{" "}
-                              </div>
-                            </div>{" "}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  
-                  </div>
-                  
-                );
-              })}
-              
-
-               
-               <div className={`${id === 0 ? "flex" : "hidden"}`}> 
-                {model && (
-                  <div
-                    className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4"
-                    data-aos="fade-down"
-                    data-aos-duration="600"
-                  >
-                    {items[0].category?.map((item) => {
-                      return (
-                        <div key={item.id}>
-                          <div>
-                            {" "}
-                            <div>
-                              <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName}{" "}
-                              </h1>
-                              <div>
-                                {" "}
-                                {item.items?.map((el) => {
-                                  return (
-                                    <div className="flex justify-between gap-2">
-                                      <p className="pb-2 font-semibold text-slate-600">
-                                        {" "}
-                                        {el.displayName}{" "}
-                                      </p>
-                                      <p className="font-medium text-slate-600">
-                                        {el.qty}
-                                      </p>
-                                    </div>
-                                  );
-                                })}{" "}
-                              </div>
-                            </div>{" "}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-              <div className={`${id === 1 ? "flex" : "hidden"}`}>
-                {model && (
-                  <div
-                    className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4"
-                    data-aos="fade-down"
-                    data-aos-duration="600"
-                  >
-                    {items[1].category?.map((item) => {
-                      return (
-                        <div key={item.id}>
-                          <div>
-                            {" "}
-                            <div>
-                              <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName}{" "}
-                              </h1>
-                              <div>
-                                {" "}
-                                {item.items?.map((el) => {
-                                  return (
-                                    <div className="flex justify-between gap-2">
-                                      <p className="pb-2 font-semibold text-slate-600">
-                                        {" "}
-                                        {el.displayName}{" "}
-                                      </p>
-                                      <p className="font-medium text-slate-600">
-                                        {el.qty}
-                                      </p>
-                                    </div>
-                                  );
-                                })}{" "}
-                              </div>
-                            </div>{" "}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-              <div className={`${id === 2 ? "flex" : "hidden"}`}>
-                {model && (
-                  <div
-                    className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4"
-                    data-aos="fade-down"
-                    data-aos-duration="600"
-                  >
-                    {items[2].category?.map((item) => {
-                      return (
-                        <div key={item.id}>
-                          <div>
-                            {" "}
-                            <div>
-                              <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName}{" "}
-                              </h1>
-                              <div>
-                                {" "}
-                                {item.items?.map((el) => {
-                                  return (
-                                    <div className="flex justify-between gap-2">
-                                      <p className="pb-2 font-semibold text-slate-600">
-                                        {" "}
-                                        {el.displayName}{" "}
-                                      </p>
-                                      <p className="font-medium text-slate-600">
-                                        {el.qty}
-                                      </p>
-                                    </div>
-                                  );
-                                })}{" "}
-                              </div>
-                            </div>{" "}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-              <div className={`${id === 3 ? "flex" : "hidden"}`}>
-                {model && (
-                  <div
-                    className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4"
-                    data-aos="fade-down"
-                    data-aos-duration="600"
-                  >
-                    {items[3].category?.map((item) => {
-                      return (
-                        <div key={item.id}>
-                          <div>
-                            {" "}
-                            <div>
-                              <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName}{" "}
-                              </h1>
-                              <div>
-                                {" "}
-                                {item.items?.map((el) => {
-                                  return (
-                                    <div className="flex justify-between gap-2">
-                                      <p className="pb-2 font-semibold text-slate-600">
-                                        {" "}
-                                        {el.displayName}{" "}
-                                      </p>
-                                      <p className="font-medium text-slate-600">
-                                        {el.qty}
-                                      </p>
-                                    </div>
-                                  );
-                                })}{" "}
-                              </div>
-                            </div>{" "}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-              <div className={`${id === 4 ? "flex" : "hidden"}`}>
-                {model && (
-                  <div
-                    className=" flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  justify-between gap-4"
-                    data-aos="fade-down"
-                    data-aos-duration="600"
-                  >
-                    {items[4].category?.map((item) => {
-                      return (
-                        <div key={item.id}>
-                          <div>
-                            {" "}
-                            <div>
-                              <h1 className="text-black font-semibold  lg:text-xl text-lg">
-                                {item.displayName}{" "}
-                              </h1>
-                              <div>
-                                {" "}
-                                {item.items?.map((el) => {
-                                  return (
-                                    <div className="flex justify-between gap-2">
-                                      <p className="pb-2 font-semibold text-slate-600">
-                                        {" "}
-                                        {el.displayName}{" "}
-                                      </p>
-                                      <p className="font-medium text-slate-600">
-                                        {el.qty}
-                                      </p>
-                                    </div>
-                                  );
-                                })}{" "}
-                              </div>
-                            </div>{" "}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div> 
-                )}
-              </div>
-              
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
