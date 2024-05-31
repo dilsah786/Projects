@@ -2,6 +2,11 @@
 
 This is a React application designed to manage and display moving details. The application features several components and utilizes a Context API for state management. This README file provides an overview of the application's structure and usage.
 
+
+## Images
+
+<img src="./src/assets/laptop.png"/>
+
 ## Table of Contents
 
 - [Installation](#installation)
