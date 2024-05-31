@@ -1,11 +1,12 @@
 # Boxigo | Movers and Packers Application
 
+<h3>Live Demo : https://boxigo-ten.vercel.app/ </h3>
+
 This is a React application designed to manage and display moving details. The application features several components and utilizes a Context API for state management. This README file provides an overview of the application's structure and usage.
 
 
-## Images
+![laptop](https://github.com/dilsah786/Projects/assets/120841935/ecc8c238-83eb-4643-93db-59e51592e78b)
 
-<img src="./src/assets/laptop.png"/>
 
 ## Table of Contents
 
@@ -56,16 +57,27 @@ Once the application is running, you can navigate through different pages to vie
 
 - `DetailsPage` shows comprehensive details about the move, including house details, inventory details, and additional information.
 - Inventory items can be expanded to view specific categories and their items.
+![DetailsPages](https://github.com/dilsah786/Projects/assets/120841935/adf4e7be-1721-4fcc-bba5-7a362488ced1)
+
+![detailsPage_small](https://github.com/dilsah786/Projects/assets/120841935/5436368c-6e57-4cb4-b7a9-65fd1121de13)
+
 
 ## Components
 
 ### Moves
 
 The `Moves` component is the main page that lists all moves. It uses the `DataContext` to fetch and display data.
+![laptop](https://github.com/dilsah786/Projects/assets/120841935/3fcc8f63-e40a-4a7a-8f2f-cef4a8cba68d)
+![Moves_small_img](https://github.com/dilsah786/Projects/assets/120841935/8b6fcf27-d425-4158-ad1d-b3645e08b3a2)
+
+
 
 ### DetailsPage
 
 The `DetailsPage` component provides detailed information about a specific move. It uses the `DataContext` to get the details of the selected move.
+![detailsPage_small](https://github.com/dilsah786/Projects/assets/120841935/cc5225a3-eb68-4884-8704-d0e11664db61)
+
+
 
 ### SideBar
 
@@ -74,6 +86,7 @@ The `SideBar` component provides navigation options within the application.
 ### Loader
 
 The `Loader` component displays a loading spinner while data is being fetched.
+![loaderPage](https://github.com/dilsah786/Projects/assets/120841935/32afbf67-7976-4ab9-8ea2-10fa24d9ed48)
 
 ## Context API
 
