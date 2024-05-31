@@ -2,8 +2,12 @@
 
 <h3>Live Demo : https://boxigo-ten.vercel.app/ </h3>
 
-This is a React application designed to manage and display moving details. The application features several components and utilizes a Context API for state management. This README file provides an overview of the application's structure and usage.
+This is a React application designed to manage and display moving details. The application features several components and utilizes a Context API for state management. This README file provides an overview of the application's structure and usage. 
 
+## Backend
+  For backend it is deployed on vercel because original api was not working after app deployment so I kept origial api in <span>.env<span> file. After deployment our new api is ready to use.
+  
+##
 
 ![laptop](https://github.com/dilsah786/Projects/assets/120841935/ecc8c238-83eb-4643-93db-59e51592e78b)
 
