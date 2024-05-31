@@ -57,7 +57,7 @@ const DetailsPage = () => {
                 <div
                   key={data.estimate_id}
                   className=" ml-10 lg:ml-20 lg:w-[90%]  w-[80%] "
-                >
+                 >
                   <div className=" lg:w-full mt-10 flex justify-between lg:justify-between">
                     <div className="lg:w-1/4 w-1/3">
                       <h1 className="text-black font-bold">From</h1>
@@ -246,9 +246,7 @@ const DetailsPage = () => {
 
               {/*  */}
               <div className="mb-5">
-                <h1 className="text-orange-600 font-bold">
-                  New House Details
-                </h1>
+                <h1 className="text-orange-600 font-bold">New House Details</h1>
                 <div className="flex justify-between">
                   <div className="flex flex-col gap-2">
                     <h1 className="text-black font-semibold">Floor No.</h1>
