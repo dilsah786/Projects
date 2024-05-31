@@ -5,22 +5,7 @@
 This is a React application designed to manage and display moving details. The application features several components and utilizes a Context API for state management. This README file provides an overview of the application's structure and usage.
 
 
-![loaderPage](https://github.com/dilsah786/Projects/assets/120841935/91463d72-444e-4c0b-883b-891b525900ba)
-
-### In Large Screen
-![laptop](https://github.com/dilsah786/Projects/assets/120841935/f6c881fd-8424-47a0-be4f-38893e5784e4)
-
-
-### In Medium Screen
-
-![tablet](https://github.com/dilsah786/Projects/assets/120841935/98749bbc-4684-4739-8247-9cb7a4e925ae)  ![Ipadmini](https://github.com/dilsah786/Projects/assets/120841935/b0aa7811-0d0f-41bf-b6b9-de23457d9e8f)
-
-
-### In small Screen
-![iphone](https://github.com/dilsah786/Projects/assets/120841935/1f6cb7b8-1e65-4640-a546-5e5c3cf43f6a)   ![samsung](https://github.com/dilsah786/Projects/assets/120841935/38383cc0-f48c-41ca-8e9b-20030396fa64)
-
-
-
+![laptop](https://github.com/dilsah786/Projects/assets/120841935/ecc8c238-83eb-4643-93db-59e51592e78b)
 
 
 ## Table of Contents
