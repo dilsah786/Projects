@@ -24,7 +24,7 @@ export const DataProvider = ({ children }) => {
     const fetchData = async () => {
       try {
         setLoading(true)
-        const response = await fetch("http://test.api.boxigo.in/sample-data/");
+        const response = await fetch("https://boxigo-backend-tau.vercel.app/api/sample-data");
         const data = await response.json();
         console.log(data);
         setData(data.Customer_Estimate_Flow);
