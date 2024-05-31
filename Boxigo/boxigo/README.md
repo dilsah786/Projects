@@ -1,6 +1,27 @@
 # Boxigo | Movers and Packers Application
 
+<h3>Live Demo : https://boxigo-ten.vercel.app/ </h3>
+
 This is a React application designed to manage and display moving details. The application features several components and utilizes a Context API for state management. This README file provides an overview of the application's structure and usage.
+
+
+![loaderPage](https://github.com/dilsah786/Projects/assets/120841935/91463d72-444e-4c0b-883b-891b525900ba)
+
+### In Large Screen
+![laptop](https://github.com/dilsah786/Projects/assets/120841935/f6c881fd-8424-47a0-be4f-38893e5784e4)
+
+
+### In Medium Screen
+
+![tablet](https://github.com/dilsah786/Projects/assets/120841935/98749bbc-4684-4739-8247-9cb7a4e925ae)  ![Ipadmini](https://github.com/dilsah786/Projects/assets/120841935/b0aa7811-0d0f-41bf-b6b9-de23457d9e8f)
+
+
+### In small Screen
+![iphone](https://github.com/dilsah786/Projects/assets/120841935/1f6cb7b8-1e65-4640-a546-5e5c3cf43f6a)   ![samsung](https://github.com/dilsah786/Projects/assets/120841935/38383cc0-f48c-41ca-8e9b-20030396fa64)
+
+
+
+
 
 ## Table of Contents
 
@@ -51,16 +72,27 @@ Once the application is running, you can navigate through different pages to vie
 
 - `DetailsPage` shows comprehensive details about the move, including house details, inventory details, and additional information.
 - Inventory items can be expanded to view specific categories and their items.
+![DetailsPages](https://github.com/dilsah786/Projects/assets/120841935/adf4e7be-1721-4fcc-bba5-7a362488ced1)
+
+![detailsPage_small](https://github.com/dilsah786/Projects/assets/120841935/5436368c-6e57-4cb4-b7a9-65fd1121de13)
+
 
 ## Components
 
 ### Moves
 
 The `Moves` component is the main page that lists all moves. It uses the `DataContext` to fetch and display data.
+![laptop](https://github.com/dilsah786/Projects/assets/120841935/3fcc8f63-e40a-4a7a-8f2f-cef4a8cba68d)
+![Moves_small_img](https://github.com/dilsah786/Projects/assets/120841935/8b6fcf27-d425-4158-ad1d-b3645e08b3a2)
+
+
 
 ### DetailsPage
 
 The `DetailsPage` component provides detailed information about a specific move. It uses the `DataContext` to get the details of the selected move.
+![detailsPage_small](https://github.com/dilsah786/Projects/assets/120841935/cc5225a3-eb68-4884-8704-d0e11664db61)
+
+
 
 ### SideBar
 
@@ -69,6 +101,7 @@ The `SideBar` component provides navigation options within the application.
 ### Loader
 
 The `Loader` component displays a loading spinner while data is being fetched.
+![loaderPage](https://github.com/dilsah786/Projects/assets/120841935/32afbf67-7976-4ab9-8ea2-10fa24d9ed48)
 
 ## Context API
 
