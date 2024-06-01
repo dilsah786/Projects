@@ -33,22 +33,22 @@ const DetailsPage = () => {
   }, []);
 
   return (
-    <div className="w-[85%] m-auto mb-10 ">
+    <div className="m-auto mb-10 ">
       {loading ? (
         <Loader />
       ) : (
         <div className="flex">
-          <div
-            className="mt-10 lg:w-[20%] w-[30%] hidden lg:flex lg:flex-col"
+          <div 
+            className="mt-10 lg:w-[20%] w-[30%] hidden lg:hidden lg:flex-col"
             data-aos="fade-right"
           >
-            <SideBar />
+            {/* <SideBar /> */}
           </div>
           <div>
-            <div className="lg:-ml-20">
+            <div className="">
               {/* Parcel div */}
               <div className="flex flex-col">
-                <div className="text-[16px] pt-10 lg:ml-20 ml-10">
+                <div className="text-[16px] pt-10 lg:ml-20 ">
                   <h1 className="text-black font-extrabold pt-5 underline">
                     My Moves
                   </h1>
@@ -56,10 +56,10 @@ const DetailsPage = () => {
 
                 <div
                   key={data.estimate_id}
-                  className=" ml-10 lg:ml-20 lg:w-[90%]  w-[80%] "
-                 >
+                  className="  "
+                >
                   <div className=" lg:w-full mt-10 flex justify-between lg:justify-between">
-                    <div className="lg:w-1/4 w-1/3">
+                    <div className="">
                       <h1 className="text-black font-bold">From</h1>
                       <p className="text-wrap lg:text-xl text-lg  max-[500px]:text-sm">
                         {" "}
@@ -69,7 +69,7 @@ const DetailsPage = () => {
                     <div className="bg-neutral-200 hidden lg:flex justify-center items-center w-10 h-10 rounded-full text-[#ee553b]">
                       <ArrowRight />{" "}
                     </div>
-                    <div className="lg:w-1/4 w-1/3 ">
+                    <div className="">
                       <h1 className="text-black font-bold lg:text-xl text-lg  max-[500px]:text-sm">
                         To
                       </h1>
@@ -80,7 +80,7 @@ const DetailsPage = () => {
                     </div>
 
                     <div className="flex justify-start">
-                      <div className="lg:w-1/4 w-1/3">
+                      <div className="">
                         <h1 className="text-black font-bold lg:text-xl text-lg  max-[500px]:text-sm">
                           Request#
                         </h1>
@@ -147,12 +147,12 @@ const DetailsPage = () => {
 
                     <div className=" justify-end  gap-2 w-10  lg:hidden">
                       <div className="my-2">
-                        <button className="bg-white border-2 border-[#ee553b] text-[#ee553b] text-sm max-[900px]:w-32 p-1 text-center flex justify-center items-center rounded-md  hover:bg-[#ee553b] hover:text-white transition-colors">
-                          <Link to="/">View All Moves</Link>
+                        <button type="button" className="bg-white border-2 border-[#ee553b] text-[#ee553b] text-sm max-[900px]:w-32 p-1 text-center flex justify-center items-center rounded-md  hover:bg-[#ee553b] hover:text-white transition-colors cursor-not-allowed" disabled  >
+                          View Move Detaill
                         </button>
                       </div>
                       <div>
-                        <button className="bg-[#ee553b] border p-2 border-[#ee553b] text-white text-center flex justify-center items-center rounded-md text-sm max-[900px]:w-32 hover:bg-white hover:text-[#ee553b]">
+                        <button className="bg-[#ee553b] border p-2 border-[#ee553b] text-white text-center flex justify-center items-center rounded-md text-sm max-[900px]:w-32 hover:bg-white hover:text-[#ee553b] ">
                           {data.custom_status || "Quotes Awaiting"}
                         </button>
                       </div>
@@ -160,8 +160,8 @@ const DetailsPage = () => {
 
                     <div className="hidden lg:flex gap-2">
                       <div>
-                        <button className="bg-white border-2 border-[#ee553b] text-[#ee553b] p-2 text-center flex justify-center items-center rounded-md hover:bg-[#ee553b] hover:text-white">
-                          <Link to="/">View All Moves</Link>
+                        <button type="button" className="bg-white border-2 border-[#ee553b] text-[#ee553b] p-2 text-center flex justify-center items-center rounded-md hover:bg-[#ee553b] hover:text-white cursor-not-allowed" disabled>
+                          View Move Details
                         </button>
                       </div>
                       <div>
@@ -286,6 +286,7 @@ const DetailsPage = () => {
 
             <div className="flex flex-col gap-1">
               {items?.map((item, index) => (
+                <div>
                 <div
                   key={item.id}
                   className="flex justify-between bg-gray-300 p-2"
@@ -309,6 +310,8 @@ const DetailsPage = () => {
                       )}
                     </button>
                   </div>
+                  </div>
+                 <div>
                   {expandedItemIndex === index && (
                     <div
                       className="flex-row lg:grid-cols-7 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 justify-between gap-4"
@@ -339,6 +342,7 @@ const DetailsPage = () => {
                       ))}
                     </div>
                   )}
+                  </div>
                 </div>
               ))}
             </div>
